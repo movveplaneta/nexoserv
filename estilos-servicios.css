@@ -1,0 +1,310 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+   ========================================= */
+:root {
+    --primary-color: #0f172a; /* Azul Marino Profundo */
+    --secondary-color: #2563eb; /* Azul Eléctrico */
+    --accent-color: #16a34a; /* Verde Éxito */
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 12px 16px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f5f9;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* =========================================
+   HEADER DE SERVICIO
+   ========================================= */
+.service-page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.service-page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.service-page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   DETALLES DEL SERVICIO (GRID)
+   ========================================= */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.detail-text h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.service-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #e2e8f0 url('https://images.unsplash.com/photo-1581094288338-2314dddb7edd?auto=format&fit=crop&q=80&w=800') center/cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn-primary {
+    background: var(--secondary-color);
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================================
+   ICONOS DE CONFIANZA
+   ========================================= */
+.trust-icons {
+    display: flex;
+    justify-content: space-around;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow);
+}
+
+.trust-item {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* =========================================
+   FORMULARIO PROFESIONAL
+   ========================================= */
+.formulario {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--primary-color);
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    ring: 2px solid #bfdbfe;
+}
+
+.urgente {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff1f2;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btn-enviar {
+    background: var(--accent-color);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-enviar:hover {
+    background: #15803d;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-copy {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL)
+   ========================================= */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none; /* Idealmente aquí pondrías un menú hamburguesa */
+    }
+    
+    .service-page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .trust-icons {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
