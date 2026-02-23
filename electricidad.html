@@ -6,6 +6,7 @@
     <title>Electricidad | Nexoserv</title>
     <meta name="description" content="Servicio técnico especializado en electricidad: instalaciones, reparaciones y mantenimientos seguros.">
     <link rel="stylesheet" href="estilos-servicios.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
 
@@ -13,13 +14,14 @@
         <div class="logo">Nexoserv</div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
+            
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Servicios ▾</a>
                 <div class="dropdown-content">
                     <a href="climatizacion.html">Climatización</a>
                     <a href="plomeria.html">Plomería</a>
-                    <a href="linea-blanca.html">Electrodomésticos</a>
-                    <a href="seguridad.html">Cámaras de Seguridad</a>
+                    <a href="electrodomesticos.html">Electrodomésticos</a>
+                    <a href="camarasdeseguridad.html">Cámaras de Seguridad</a>
                 </div>
             </li>
             <li><a href="index.html#contacto">Contacto</a></li>
@@ -44,7 +46,7 @@
                         <li><strong>Reparaciones eléctricas:</strong> Diagnóstico rápido y arreglos eficientes.</li>
                         <li><strong>Mantenimiento preventivo:</strong> Revisión periódica para evitar fallas futuras.</li>
                     </ul>
-                    <button class="btn-primary" id="open-btn">Solicitar Presupuesto</button>
+                    <button class="abrir-formulario">Enviar Solicitud</button>
                 </div>
                 <div class="detail-image">
                     <div class="image-placeholder"></div>
@@ -67,76 +69,81 @@
             </div>
         </section>
 
-        <!-- ================= FORMULARIO ================= -->
-        <section class="section formulario" id="formulario">
-            <h2>Solicita tu Servicio</h2>
+        <!-- ================= MODAL FORMULARIO ================= -->
+<div id="modalFormulario" class="modal">
+    <div class="modal-contenido">
 
-            <form name="solicitud-servicio" method="POST" data-netlify="true">
-                <!-- Campo oculto necesario para Netlify -->
-                <input type="hidden" name="form-name" value="solicitud-servicio">
+        <span class="cerrar-modal">&times;</span>
 
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <h2>Solicita tu Servicio</h2>
 
-                <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <form id="formularioSolicitud">
+            <input type="hidden" name="form-name" value="solicitud-servicio">
 
-                <!-- Selección de provincia -->
-                <select name="provincia" required>
-                                        <option value="">Selecciona tu provincia</option>
-                    <option>Santo Domingo</option>
-                    <option>Santiago</option>
-                    <option>La Altagracia (Punta Cana)</option>
-                    <option>San Cristóbal</option>
-                    <option>La Romana</option>
-                    <option>Puerto Plata</option>
-                    <option>San Pedro de Macorís</option>
-                    <option>La Vega</option>
-                    <option>Duarte (San Francisco de Macorís)</option>
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+            <select name="provincia" required>
+                <option value="">Selecciona tu provincia</option>
+                <option>Santo Domingo</option>
+                <option>Santiago</option>
+                <option>La Altagracia (Punta Cana)</option>
+                <option>San Cristóbal</option>
+                <option>La Romana</option>
+                <option>Puerto Plata</option>
+                <option>San Pedro de Macorís</option>
+                <option>La Vega</option>
+                <option>Duarte (San Francisco de Macorís)</option>
+            </select>
+
+            <input type="text" name="ciudad" placeholder="Sector o Ciudad" required>
+
+            <select name="tipo-servicio" required>
+                <option value="">Tipo de servicio</option>
+                <option>Instalación</option>
+                <option>Reparación</option>
+                <option>Mantenimiento</option>
+            </select>
+
+            <textarea name="descripcion" rows="4" placeholder="Describe tu problema"></textarea>
+
+            <div class="urgente">
+                <label>¿Es urgente?</label>
+                <select name="urgente">
+                    <option>No</option>
+                    <option>Sí</option>
                 </select>
+            </div>
 
-                <input type="text" name="ciudad" placeholder="Sector o Ciudad" required>
+            <button type="submit" class="btn-enviar">Enviar Solicitud</button>
 
-                <select name="tipo-servicio" required>
-                    <option value="">Tipo de servicio</option>
-                    <option>Instalación</option>
-                    <option>Reparación</option>
-                    <option>Mantenimiento</option>
-                </select>
-
-                <textarea name="descripcion" rows="4" placeholder="Describe tu problema"></textarea>
-
-                <div class="urgente">
-                    <label>¿Es urgente?</label>
-                    <select name="urgente">
-                        <option>No</option>
-                        <option>Sí</option>
-                    </select>
+            <!-- MENSAJE DE ÉXITO -->
+            <div class="mensaje-exito" id="mensajeExito">
+                <div class="check-wrapper">
+                    <svg viewBox="0 0 52 52" class="check-svg">
+                        <circle cx="26" cy="26" r="25" fill="none"/>
+                        <path fill="none" d="M14 27 l7 7 l16 -16"/>
+                    </svg>
                 </div>
+                <h3>Solicitud enviada correctamente</h3>
+                <p>Un técnico se pondrá en contacto contigo en breve.</p>
+            </div>
 
-                <button type="submit" class="btn-enviar">
-                    Enviar Solicitud
-                </button>
+        </form>
 
-                <div class="mensaje-exito" id="mensajeExito">
-                    <div class="check-wrapper">
-                        <svg viewBox="0 0 52 52" class="check-svg">
-                            <circle cx="26" cy="26" r="25" fill="none"/>
-                            <path fill="none" d="M14 27 l7 7 l16 -16"/>
-                        </svg>
-                    </div>
-                    <h3>Solicitud enviada correctamente</h3>
-                                        <p>Un técnico se pondrá en contacto contigo en breve.</p>
-                </div>
-            </form>
-        </section>
+    </div>
+</div>
 
-        <footer class="footer">
-            <p><strong>Nexoserv</strong> | Conectamos soluciones reales</p>
-            <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
-        </footer>
+ <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p><strong>Nexoserv</strong> | Conectamos soluciones reales</p>
+        <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
+    </footer>
 
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+         <script src="https://cdn.lordicon.com/lordicon.js"></script>
        <script src="//code.tidio.co/xysckbvhx3xlw9eiwsqm6vudtkcwblx0.js" async></script>
     
     <script src="script.js"></script>
 </body>
 </html>
+
