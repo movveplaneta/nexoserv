@@ -4,7 +4,7 @@
 :root {
     --primary: #0f172a;        /* Azul Oxford */
     --accent: #2563eb;         /* Azul Eléctrico */
-    --success: #16a34a;        /* Verde Profesional */
+    --success: #2563eb;        /* Verde Profesional */
     --bg: #f8fafc;             /* Fondo gris casi blanco */
     --white: #ffffff;
     --text-dark: #1e293b;
@@ -13,6 +13,9 @@
     --transition: all 0.3s ease;
 }
 
+/* =========================================
+   RESET Y BODY
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +34,7 @@ body {
    NAVEGACIÓN
    ========================================= */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -40,7 +43,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
 }
 
 .logo {
@@ -68,7 +71,7 @@ body {
     color: var(--accent);
 }
 
-/* Dropdown Estilizado */
+/* Dropdown */
 .dropdown { position: relative; }
 .dropdown-content {
     display: none;
@@ -81,21 +84,27 @@ body {
     border-radius: 8px;
     padding: 10px 0;
     border: 1px solid #e2e8f0;
+    z-index: 10;
 }
 .dropdown-content a {
     padding: 10px 20px;
     display: block;
     font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: var(--transition);
 }
-.dropdown-content a:hover { background: #f1f5f9; }
+.dropdown-content a:hover {
+    background: var(--accent);
+    color: var(--white);
+}
 .dropdown:hover .dropdown-content { display: block; }
 
 /* =========================================
-   HERO SECTION
+   HERO
    ========================================= */
 .hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80') center/cover;
+    background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)),
+                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80') center/cover no-repeat;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -106,7 +115,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -119,34 +128,41 @@ body {
     margin: 0 auto;
 }
 
+
 /* =========================================
-   SECCIONES Y BOTONES
+   SECCIONES (TÍTULOS MÁS ARRIBA)
    ========================================= */
 .section {
-    padding: 80px 10%;
+    padding: 10px 10%; /* reducido de 60px a 40px para subir todo el bloque */
 }
 
 .section-title {
     font-size: 2.5rem;
     color: var(--primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem; /* más pegado al párrafo */
+    text-align: left;
     position: relative;
 }
 
 .section p {
     color: var(--text-muted);
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
     max-width: 700px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .section ul {
     list-style: none;
-    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
 }
 
 .section ul li {
-    padding: 8px 0;
+    padding: 6px 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -158,27 +174,47 @@ body {
     font-weight: bold;
 }
 
-.btn-primary {
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn-primary, .abrir-formulario, .btn-enviar {
     display: inline-block;
-    background: var(--accent);
-    color: var(--white);
-    padding: 14px 30px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
+    padding: 12px 25px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
+.btn-primary {
+    background: var(--accent);
+    color: var(--white);
+}
 .btn-primary:hover {
-    background: #1d4ed8;
+    background: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.abrir-formulario {
+    background: var(--success);
+    color: var(--white);
+}
+.abrir-formulario:hover {
+    background: #15803d;
+}
+
+.btn-enviar {
+    background: var(--accent);
+    color: var(--white);
+}
+.btn-enviar:hover {
+    background: var(--primary);
 }
 
 /* =========================================
-   TARJETAS (BENEFICIOS / CÓMO FUNCIONA)
+   TARJETAS
    ========================================= */
 .grid-4, .grid-3 {
     display: grid;
@@ -187,65 +223,76 @@ body {
 }
 
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
 .card, .paso {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid #f1f5f9;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
+.card:hover { transform: translateY(-5px); }
 
-.paso span {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 15px;
-}
+.paso span { font-size: 2.5rem; display: block; margin-bottom: 15px; }
 
 /* =========================================
-   FORMULARIO PROFESIONAL
+   FORMULARIO MODAL
    ========================================= */
-#formulario {
-    background: var(--primary);
-    color: var(--white);
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
 }
 
-#formulario .section-title { color: var(--white); }
-
-form {
+.modal-contenido {
     background: var(--white);
-    padding: 40px;
-    border-radius: 15px;
-    display: grid;
-    gap: 15px;
-    max-width: 700px;
-    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-form input, form select, form textarea {
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-contenido input,
+.modal-contenido select,
+.modal-contenido textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #e2e8f0;
+    margin: 8px 0;
     border-radius: 6px;
-    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
 }
 
-.urgente {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: var(--text-dark);
-    background: #fff1f2;
-    padding: 10px;
-    border-radius: 6px;
+/* MENSAJE DE ÉXITO */
+.mensaje-exito {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--success);
 }
+
+.check-wrapper { width: 50px; height: 50px; margin: 0 auto 10px auto; }
+.check-svg { stroke: var(--success); stroke-width: 4; stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 0.5s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* =========================================
    FOOTER
@@ -265,11 +312,74 @@ form input, form select, form textarea {
     opacity: 0.6;
 }
 
+
 /* =========================================
    RESPONSIVO
    ========================================= */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Aquí convendría un menú hamburguesa */
+    .nav-links { display: none; } /* Mejor implementar menú hamburguesa */
     .hero-content h1 { font-size: 2.2rem; }
     .section { padding: 50px 5%; }
+}
+/* =========================================
+   FORMULARIO PROFESIONAL
+   ========================================= */
+.formulario {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--primary-color);
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    ring: 2px solid #bfdbfe;
+}
+
+.urgente {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff1f2;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btn-enviar {
+    background: var(--accent-color);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-enviar:hover {
+    background: #15803d;
 }
