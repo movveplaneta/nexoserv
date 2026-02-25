@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><link rel="stylesheet" href="estilos-principal.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexoserv | Técnicos Confiables</title>
+    
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+   <!-- ================= NAVEGACIÓN ================= -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="imgnexoserv.png" alt="Nexoserv Logo">
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <a href="#inicio">
+                <img src="iconshome.png" alt="Inicio" class="nav-icon">
+                <span>Inicio</span>
+            </a>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">
+                <img src="iconsbriefcase.png" alt="Servicios" class="nav-icon">
+                <span>Servicios</span>
+                <img src="iconschevron-down.png" alt="Dropdown" class="nav-icon-small">
+            </a>
+            <div class="dropdown-content">
+                <a href="climatizacion.html">Climatización</a>
+                <a href="electricidad.html">Electricidad</a>
+                <a href="plomeria.html">Plomería</a>
+                <a href="electrodomesticos.html">Electrodomésticos</a>
+                <a href="camaras.html">Cámaras de Seguridad</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#contacto">
+                <img src="iconsphone.png" alt="Contacto" class="nav-icon">
+                <span>Contacto</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expertos en Mantenimiento y Soluciones</h1>
+            <p>Conectamos tus necesidades con los mejores técnicos especializados de la región.</p>
+            <button class="abrir-formulario">Solicitar Servicio Ahora</button>
+        </div>
+    </section>
+
+    <!-- ================= SECCIONES ================= -->
+    <section class="section">
+        <h2 class="section-title">Climatización</h2>
+        <p>Instalamos y optimizamos sistemas de climatización para mantener tus espacios cómodos y eficientes.</p>
+        <ul>
+            <li>Consumo energético optimizado</li>
+            <li>Equipos duraderos</li>
+            <li>Ambiente ideal todo el año</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Electricidad</h2>
+        <p>Brindamos servicios eléctricos seguros, desde instalaciones hasta reparaciones.</p>
+        <ul>
+            <li>Electricidad confiable</li>
+            <li>Reducción de riesgos</li>
+            <li>Cumplimiento de normativas</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Plomería</h2>
+        <p>Ofrecemos soluciones de plomería para reparaciones, instalaciones y mantenimiento de tuberías.</p>
+        <ul>
+            <li>Soluciones rápidas</li>
+            <li>Prevención de fugas</li>
+            <li>Durabilidad garantizada</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Electrodomésticos</h2>
+        <p>Reparación e instalación de electrodomésticos como neveras y lavadoras.</p>
+        <ul>
+            <li>Atención especializada</li>
+            <li>Repuestos de calidad</li>
+            <li>Prolonga la vida de tus aparatos</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Cámaras de Seguridad</h2>
+        <p>Instalamos sistemas de cámaras para proteger tu hogar o negocio.</p>
+        <ul>
+            <li>Tranquilidad total</li>
+            <li>Monitoreo en tiempo real</li>
+            <li>Instalación profesional</li>
+        </ul>
+    </section>
+
+    <!-- ================= MODAL FORMULARIO ================= -->
+    <div id="modalFormulario" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+
+            <h2>Solicita tu Servicio</h2>
+
+            <form id="formularioSolicitud">
+                <input type="hidden" name="form-name" value="solicitud-servicio">
+
+                <input type="text" name="nombre" placeholder="Nombre completo" required>
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+                <select name="provincia" required>
+                    <option value="">Selecciona tu provincia</option>
+                    <option>Santo Domingo</option>
+                    <option>Santiago</option>
+                    <option>La Altagracia (Punta Cana)</option>
+                    <option>San Cristóbal</option>
+                    <option>La Romana</option>
+                    <option>Puerto Plata</option>
+                    <option>San Pedro de Macorís</option>
+                    <option>La Vega</option>
+                    <option>Duarte (San Francisco de Macorís)</option>
+                </select>
+
+                <input type="text" name="ciudad" placeholder="Sector o Ciudad" required>
+
+                <select name="tipo-servicio" required>
+                    <option value="">Tipo de servicio</option>
+                    <option>Instalación</option>
+                    <option>Reparación</option>
+                    <option>Mantenimiento</option>
+                </select>
+
+                <textarea name="descripcion" rows="4" placeholder="Describe tu problema"></textarea>
+
+                <div class="urgente">
+                    <label>¿Es urgente?</label>
+                    <select name="urgente">
+                        <option>No</option>
+                        <option>Sí</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+
+                <!-- MENSAJE DE ÉXITO -->
+                <div class="mensaje-exito" id="mensajeExito">
+                    <div class="check-wrapper">
+                        <svg viewBox="0 0 52 52" class="check-svg">
+                            <circle cx="26" cy="26" r="25" fill="none"/>
+                            <path fill="none" d="M14 27 l7 7 l16 -16"/>
+                        </svg>
+                    </div>
+                    <h3>Solicitud enviada correctamente</h3>
+                    <p>Un técnico se pondrá en contacto contigo en breve.</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= BENEFICIOS ================= -->
+    <section class="section beneficios">
+        <h2>¿Por qué elegir Nexoserv?</h2>
+
+        <div class="grid-4">
+            <div class="card">
+                <h3>✔ Técnicos verificados</h3>
+                <p>Profesionales certificados y evaluados.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Atención rápida</h3>
+                <p>Respuesta inmediata a tu solicitud.</p>
+            </div>
+
+            <div class="card">
+                <h3>💰 Precios competitivos</h3>
+                <p>Tarifas justas y transparentes.</p>
+            </div>
+
+            <div class="card">
+                <h3>🛡 Servicio garantizado</h3>
+                <p>Trabajo seguro y con respaldo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CÓMO FUNCIONA ================= -->
+    <section class="section como-funciona">
+        <h2>¿Cómo funciona?</h2>
+
+        <div class="grid-3">
+            <div class="paso">
+                <span>1️⃣</span>
+                <h3>Solicita el servicio</h3>
+                <p>Completa el formulario en menos de 1 minuto.</p>
+            </div>
+
+            <div class="paso">
+                <span>2️⃣</span>
+                <h3>Te contacta un técnico</h3>
+                <p>Uno de nuestros técnicos se comunica contigo.</p>
+            </div>
+
+            <div class="paso">
+                <span>3️⃣</span>
+                <h3>Recibe solución rápida</h3>
+                <p>Solucionamos tu problema de inmediato.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+    <div class="footer-logo">
+        <img src="ruta-a-tu-logo.png" alt="Logo de la empresa">
+    </div>
+    <div class="footer-secciones">
+        <div class="footer-col">
+            <h3>Contenido</h3>
+            <ul>
+                <li>Autores</li>
+                <li>Iconos</li>
+                <li>Pegatinas</li>
+                <li>Iconos de interfaz</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Herramientas</h3>
+            <ul>
+                <li>API</li>
+                <li>Espacio de trabajo de Google</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Ayuda</h3>
+            <ul>
+                <li>Apoyo</li>
+                <li>Preguntas frecuentes</li>
+                <li>Estilos de iconos</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Compañía</h3>
+            <ul>
+                <li>Acerca de</li>
+                <li>Contáctanos</li>
+                <li>Nuestra licencia</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-redes">
+        <p>Redes Sociales</p>
+        <div class="footer-sociales">
+    <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+        <a href="#" class="footer-suscribirse">Inscribirse</a>
+    </div>
+    <div class="footer-legal">
+        <ul>
+            <li><a href="privacidad.html">Política de privacidad</a></li>
+            <li><a href="terminos-uso.html">Términos de Uso</a></li>
+            <li><a href="tratamiento-datos.html">Aviso de Tratamiento de Datos </a></li>
+        </ul>
+        <p><strong>Nexoserv</strong> | Conectamos soluciones reales</p>
+        <p class="footer-copy">© 2026 Nexoserv. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="//code.tidio.co/xysckbvhx3xlw9eiwsqm6vudtkcwblx0.js" async></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

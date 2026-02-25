@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #020617; /* Color de fondo principal del footer */
+    --white: #ffffff;         /* Color del texto */
+    --accent-color: #1db954; /* Color para botones o enlaces */
+    --link-color: #a0aab0; /* Enlaces secundarios */
+}
+
+.footer {
+    background: var(--primary-color);  /* Fondo oscuro uniforme */
+    color: var(--white);               /* Texto blanco */
+    width: 100%;                        /* Ocupa todo el ancho */
+    padding: 60px 10% 40px;  /* Ajuste de padding */
+    box-sizing: border-box;             /* Incluye padding en el ancho total */
+    font-family: 'Arial', sans-serif;   /* Fuente estándar */
+}
+
+.footer-secciones {
+    display: flex;
+    flex-wrap: wrap; /* Permite que se ajusten en móvil */
+    justify-content: space-between; /* Distribución de columnas */
+    margin-bottom: 40px; /* Espacio antes del copy */
+}
+
+.footer-col {
+    flex: 1 1 200px; /* Cada columna con flexibilidad */
+    margin: 10px;
+}
+
+.footer-logo {
+    text-align: left;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    margin-bott
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    color: var(--link-color);
+}
+
+.footer-col ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-redes p {
+    margin-bottom: 15px;
+    margin-top: 10px;  /* Añade un espacio arriba */
+    font-weight: bold;
+    color: var(--white);
+}
+
+.footer-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-sociales a img {
+    width: 24px;
+    transition: transform 0.3s;
+}
+
+.footer-sociales a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-suscribirse {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.footer-suscribirse:hover {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.footer-legal ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.footer-legal ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer-legal ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer-legal ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
