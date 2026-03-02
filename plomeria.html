@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plomería | Nexoserv</title>
+    <meta name="description" content="Servicio técnico especializado en plomería: reparaciones, instalaciones y mantenimientos.">
+    <link rel="stylesheet" href="estilos-servicios.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+    <!-- ================= NAVEGACIÓN ================= -->
+<nav class="navbar">
+    <div class="logo">Nexoserv</div>
+
+    <ul class="nav-links">
+        <li>
+            <a href="index.html">
+                <img src="iconshome.png" alt="Inicio" class="nav-icon">
+                <span>Inicio</span>
+            </a>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">
+                <img src="iconsbriefcase.png" alt="Servicios" class="nav-icon">
+                <span>Servicios</span>
+                <img src="iconschevron-down.png" alt="Dropdown" class="nav-icon-small">
+            </a>
+            <div class="dropdown-content">
+                <a href="climatizacion.html">Climatización</a>
+                <a href="electricidad.html">Electricidad</a>
+                <a href="plomeria.html">Plomería</a>
+                <a href="electrodomesticos.html">Electrodomésticos</a>
+                <a href="camaras.html">Cámaras de Seguridad</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#contacto">
+                <img src="iconsphone.png" alt="Contacto" class="nav-icon">
+                <span>Contacto</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <header class="service-page-header">
+        <div class="container">
+            <h1>Expertos en Plomería</h1>
+            <p>Soluciones rápidas y eficaces en reparación, instalación y mantenimiento de tuberías.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="details">
+            <div class="detail-grid">
+                <div class="detail-text">
+                    <h2>Reparación e Instalación de Plomería</h2>
+                    <p>En <strong>Nexoserv</strong>, ofrecemos soluciones integrales en plomería, desde reparaciones hasta nuevas instalaciones.</p>
+                                        <ul class="service-list">
+                        <li><strong>Reparaciones rápidas:</strong> Solucionamos fugas, obstrucciones y roturas al instante.</li>
+                        <li><strong>Instalación de tuberías:</strong> Montaje de sistemas hidráulicos confiables y duraderos.</li>
+                        <li><strong>Mantenimiento preventivo:</strong> Revisión periódica para evitar problemas antes de que ocurran.</li>
+                    </ul>
+                    <button class="abrir-formulario">Enviar Solicitud</button>
+                </div>
+                <div class="detail-image">
+                <img src="IMAGEN3.jpg" alt="Descripción de la imagen" class="image-placeholder">
+               </div>
+            </div>
+        </section>
+
+        <section class="trust-icons">
+
+    <div class="trust-item">
+        <img src="trust3.svg" class="trust-svg" alt="Garantía">
+        <p>Garantía de 30 días</p>
+    </div>
+
+    <div class="trust-item">
+        <img src="trust1.svg" class="trust-svg" alt="Certificados">
+        <p>Técnicos Certificados</p>
+    </div>
+
+    <div class="trust-item">
+        <img src="trust4.svg" class="trust-svg" alt="Atención">
+        <p>Atención Inmediata</p>
+    </div>
+
+</section>
+        <!-- ================= MODAL FORMULARIO ================= -->
+<div id="modalFormulario" class="modal">
+    <div class="modal-contenido">
+
+        <span class="cerrar-modal">&times;</span>
+
+        <h2>Solicita tu Servicio</h2>
+
+        <form id="formularioSolicitud">
+            <input type="hidden" name="form-name" value="solicitud-servicio">
+
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+            <select name="provincia" required>
+                <option value="">Selecciona tu provincia</option>
+                <option>Santo Domingo</option>
+                <option>Santiago</option>
+                <option>La Altagracia (Punta Cana)</option>
+                <option>San Cristóbal</option>
+                <option>La Romana</option>
+                <option>Puerto Plata</option>
+                <option>San Pedro de Macorís</option>
+                <option>La Vega</option>
+                <option>Duarte (San Francisco de Macorís)</option>
+            </select>
+
+            <input type="text" name="ciudad" placeholder="Sector o Ciudad" required>
+
+            <select name="tipo-servicio" required>
+                <option value="">Tipo de servicio</option>
+                <option>Instalación</option>
+                <option>Reparación</option>
+                <option>Mantenimiento</option>
+            </select>
+
+            <textarea name="descripcion" rows="4" placeholder="Describe tu problema"></textarea>
+
+            <div class="urgente">
+                <label>¿Es urgente?</label>
+                <select name="urgente">
+                    <option>No</option>
+                    <option>Sí</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+
+            <!-- MENSAJE DE ÉXITO -->
+            <div class="mensaje-exito" id="mensajeExito">
+                <div class="check-wrapper">
+                    <svg viewBox="0 0 52 52" class="check-svg">
+                        <circle cx="26" cy="26" r="25" fill="none"/>
+                        <path fill="none" d="M14 27 l7 7 l16 -16"/>
+                    </svg>
+                </div>
+                <h3>Solicitud enviada correctamente</h3>
+                <p>Un técnico se pondrá en contacto contigo en breve.</p>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+    
+
+         <script src="https://cdn.lordicon.com/lordicon.js"></script>
+      <script src="//code.tidio.co/xysckbvhx3xlw9eiwsqm6vudtkcwblx0.js" async></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* =========================================
+   FOOTER PRO (CON CURVA DE IDENTIDAD)
+   ========================================= */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    /* Espacio extra arriba para que la curva no tape el contenido */
+    padding: 120px 0 40px 0; 
+    margin-top: 100px;
+    position: relative;
+    
+    /* LA CURVA: Identidad visual invertida para el cierre */
+    clip-path: ellipse(150% 100% at 50% 100%);
+    /* Nota: Esta curva hace que el fondo 'suba' de forma elegante */
+}
+
+/* Contenedor para organizar las 4 columnas */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Títulos de columna con acento */
+.footer-col h3 {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Enlaces con efecto de desplazamiento */
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+
+.footer-col a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-col a:hover {
+    color: var(--white);
+    transform: translateX(8px); /* Desplazamiento sutil */
+}
+
+/* Redes Sociales circulares */
+.footer-sociales {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.footer-sociales a {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.footer-sociales a:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+/* Buscador Estilo Nexoserv */
+.footer-search form {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-search input {
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    color: var(--white);
+    flex: 1;
+    outline: none;
+}
+
+.footer-search button {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Copyright y Línea Final */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding: 30px 20px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--text-light);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .footer {
+        clip-path: ellipse(200% 100% at 50% 100%); /* Curva más plana en móvil */
+        padding-top: 80px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

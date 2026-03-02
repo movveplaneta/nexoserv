@@ -1,0 +1,466 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN
+========================================= */
+:root {
+    --primary-color: #0f172a;
+    --secondary-color: #2563eb;
+    --accent-color: #2563eb;
+    --success: #2563eb;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* =========================
+   RESET GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.icon-small, .nav-icon-small {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 220px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: 10px 0;
+    border: 1px solid #e2e8f0;
+    z-index: 10;
+}
+.dropdown-content a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+.dropdown-content a:hover {
+    background: var(--accent-color);
+    color: var(--white);
+}
+.dropdown:hover .dropdown-content { display: block; }
+
+/* =========================================
+   HEADER DE SERVICIO
+   ========================================= */
+.service-page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.service-page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.service-page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   DETALLES DEL SERVICIO (GRID)
+   ========================================= */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.detail-text h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.service-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 400px; /* puedes ajustar */
+    background: #e2e8f0 url('IMAGEN1.jpg') center/cover no-repeat;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.abrir-formulario {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.abrir-formulario:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+/* =========================================
+   ICONOS DE CONFIANZA
+   ========================================= */
+.trust-icons {
+    display: flex;
+    justify-content: space-around;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow);
+}
+
+.trust-item {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ========================================= 
+   FORMULARIO MODAL MODERNO
+========================================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    animation: fadeInModal 0.3s ease forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-contenido {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-contenido.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.cerrar-modal:hover {
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   INPUTS MODERNOS
+========================================= */
+.modal-contenido input,
+.modal-contenido select,
+.modal-contenido textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.modal-contenido input:focus,
+.modal-contenido select:focus,
+.modal-contenido textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+textarea {
+    resize: none;
+}
+
+/* CAMPO URGENTE MODERNO */
+.urgente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #eff6ff;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+/* =========================================
+   BOTÓN DE ENVÍO MODERNO
+========================================= */
+.btn-enviar {
+    width: 100%;
+    padding: 14px 0;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-enviar:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+
+/* =========================================
+   MENSAJE DE ÉXITO MODERNO
+========================================= */
+.mensaje-exito {
+    display: none;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background: #d1fae5;
+    color: #065f46;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.mensaje-exito h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.mensaje-exito p {
+    font-size: 1rem;
+}
+
+/* CHECK ANIMADO */
+.check-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+}
+
+.check-svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--success);
+    stroke-width: 4;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw 0.5s forwards;
+}
+
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* ============================== 
+   TRUST ICONS – NEXOSERV PRO
+============================== */
+
+.trust-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    margin-bottom: 70px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.trust-item {
+    transition: var(--transition);
+}
+
+.trust-item:hover {
+    transform: translateY(-6px);
+}
+
+/* ==============================
+   ICONOS CON SOMBRA
+============================== */
+.trust-svg {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+    filter: drop-shadow(0 6px 12px rgba(37, 99, 235, 0.25));
+}
+
+/* Si el SVG usa stroke */
+.trust-svg path {
+    stroke: var(--secondary-color);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--transition);
+}
+
+.trust-item:hover .trust-svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.35));
+}
+
+.trust-item:hover .trust-svg path {
+    stroke: var(--primary-color);
+}
+
+.trust-item p {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+
+    .trust-icons {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 25px;
+    }
+
+    .trust-svg {
+        width: 48px;
+        height: 48px;
+    }
+}

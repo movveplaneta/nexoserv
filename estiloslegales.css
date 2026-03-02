@@ -1,0 +1,113 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN (ROOT)
+   ========================================= */
+:root {
+    --primary-color: #0f172a;
+    --secondary-color: #2563eb;
+    --accent-color: #2563eb;
+    --success: #2563eb;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* =========================================
+   RESET Y BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   HEADER (ENCABEZADO)
+   ========================================= */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 0%); /* Curvatura elegante */
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL (MAIN)
+   ========================================= */
+main {
+    max-width: 800px;
+    margin: -50px auto 60px auto; /* Elevación sobre el header */
+    background: var(--white);
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 10;
+}
+
+section {
+    margin-bottom: 45px;
+    transition: var(--transition);
+}
+
+/* Decoración en los títulos de sección */
+h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+h2::before {
+    content: "";
+    width: 6px;
+    height: 24px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   RESPONSIVE (ADAPTABILIDAD)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 70px 20px;
+    }
+
+    main {
+        margin: -30px 15px 40px 15px;
+        padding: 35px 25px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
